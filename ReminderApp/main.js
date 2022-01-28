@@ -28,6 +28,7 @@ const mainMenuTemplate = [
 
 const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
 Menu.setApplicationMenu(mainMenu);
+
 app.whenReady().then(() => {
   createWindow()
 
