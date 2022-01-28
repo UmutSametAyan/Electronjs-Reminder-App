@@ -66,6 +66,24 @@ function createNotifycation() {
 
 }
 
+function checkboxisChecked(){
+   let containerColor = document.querySelector('.container');
+   let colorCount = 0;
+   let colorCounter =  setInterval(() => {
+        colorCount += 1;
+        if(colorCount === 1){
+            containerColor.style.background = "red";
+        }
+        else if (colorCount === 2){
+            containerColor.style.background = "yellow";
+        }
+        else {
+            containerColor.style.background = "#f5f5f5";
+            clearInterval(colorCounter);
+        }
+    }, 1000);
+}
+
 function timeCalc(timeParam) {
     return timeParam + "" + 0 + "" + 0 + "" + 0;
 }
@@ -76,6 +94,9 @@ stopBtn.classList.add('secbtn');
 let appInterval;
 let showInterval;
 let okeyBoss = document.createElement('p');
+let checkbox = document.querySelector('.checkbox');
+
+const checkboxColors = ["red","blue","green"];
 
 startBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -88,9 +109,19 @@ startBtn.addEventListener('click', (e) => {
     appInterval = setInterval(() => {
         formError.innerHTML = fakeTime -= 1 + "";
         if (fakeTime <= 0) {
-            createNotifycation();
-            playSound(audioFile);
-            fakeTime = alertTime;
+            if(checkbox.checked){
+                createNotifycation();
+                checkboxisChecked();
+                playSound(audioFile);
+                fakeTime = alertTime;
+                
+            }
+            else {
+                createNotifycation();
+                playSound(audioFile);
+                fakeTime = alertTime;
+            }
+      
         }
     }, 1000);
 
@@ -125,6 +156,7 @@ stopBtn.addEventListener('click', (e) => {
     stopBtn.style.display = "none";
     startBtn.style.display = "block";
 })
+
 
 
 

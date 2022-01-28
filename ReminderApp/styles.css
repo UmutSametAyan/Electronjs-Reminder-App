@@ -62,32 +62,7 @@ input[type="file"] {
     --key-letter: #333;
   }
   
-  :root[data-theme="dark"] {
-    --bg-color: #222;
-    --bg-round-a: #4a4a4a;
-    --bg-round-b: #2e2e2e;
-    --panel-color: #fff;
-    --title: #f2f2f2;
-    --bg-input: #444;
-    --input-icon: #ccc;
-    --input: #ccc;
-    --input-hover: #aaa;
-    --btn-color: #333;
-    --btn-text: #f2f2f2;
-    --btn-hover: #444;
-    --social-text: #ccc;
-    --social-icon: #fff;
-    --icon-color: #aaa;
-    --check-text: #fff;
-    --check-hover: #fff;
-    --check-link: #5995fd;
-    --pass-color: #fff;
-    --pass-hover-color: #5995fd;
-    --key-color: #f0f0f0;
-    --keyboard-color: #444;
-    --key-letter: #fff;
-  }
-  
+
   * {
     padding: 0;
     margin: 0;
